@@ -1,0 +1,118 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .DS_Store
+* .gitignore
+* .idea/
+* .idea/Android.iml
+* .idea/ant.xml
+* .idea/artifacts/
+* .idea/artifacts/FujiSDK_jar.xml
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/misc.xml
+* .idea/module_android.xml
+* .idea/module_android_Sun_Nov_13_23-10-52_ICT_2016.xml
+* .idea/modules.xml
+* .idea/workspace.xml
+* FujiSDK.iml
+* META-INF/
+* META-INF/MANIFEST.MF
+* ant.properties
+* build.xml
+* out/
+* out/.DS_Store
+* out/artifacts/
+* out/artifacts/.DS_Store
+* out/artifacts/FujiSDK_jar/
+* out/artifacts/FujiSDK_jar/.DS_Store
+* out/artifacts/FujiSDK_jar/FujiSDK.jar
+* out/production/
+* out/production/.DS_Store
+* out/production/Android/
+* out/production/Android/com/
+* out/production/Android/com/fuji/
+* out/production/Android/com/fuji/fujisdk/
+* out/production/Android/com/fuji/fujisdk/BuildConfig.class
+* out/production/Android/com/fuji/fujisdk/Constants.class
+* out/production/Android/com/fuji/fujisdk/core/
+* out/production/Android/com/fuji/fujisdk/core/helper/
+* out/production/Android/com/fuji/fujisdk/core/helper/Storage.class
+* out/production/Android/com/fuji/fujisdk/core/http/
+* out/production/Android/com/fuji/fujisdk/core/http/HttpClientRequest$Type.class
+* out/production/Android/com/fuji/fujisdk/core/http/HttpClientRequest.class
+* out/production/Android/com/fuji/fujisdk/oauth/
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator$1.class
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator$LoginTask.class
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator$LogoutTask.class
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator$RenewTokenTask.class
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator$SignupTask.class
+* out/production/Android/com/fuji/fujisdk/oauth/Authenticator.class
+* out/production/Android/com/fuji/fujisdk/oauth/FujiSDK$1.class
+* out/production/Android/com/fuji/fujisdk/oauth/FujiSDK.class
+* out/production/Android/com/fuji/fujisdk/oauth/OAuthStorage.class
+* out/production/Android/com/fuji/fujisdk/oauth/Token.class
+* out/production/Android/com/fuji/fujisdk/oauth/listener/
+* out/production/Android/com/fuji/fujisdk/oauth/listener/BaseAuthenticationListener.class
+* out/production/Android/com/fuji/fujisdk/oauth/listener/LoginListener.class
+* out/production/Android/com/fuji/fujisdk/oauth/listener/SignupListener.class
+* out/production/Android/com/fuji/fujisdk/test/
+* out/production/Android/com/fuji/fujisdk/test/FujiSDKTest$1.class
+* out/production/Android/com/fuji/fujisdk/test/FujiSDKTest.class
+* out/production/FujiSDK/
+* out/production/FujiSDK/com/
+* out/production/FujiSDK/com/fuji/
+* out/production/FujiSDK/com/fuji/fujisdk/
+* out/production/FujiSDK/com/fuji/fujisdk/BuildConfig.class
+* out/production/FujiSDK/com/fuji/fujisdk/Constants.class
+* out/production/FujiSDK/com/fuji/fujisdk/core/
+* out/production/FujiSDK/com/fuji/fujisdk/core/helper/
+* out/production/FujiSDK/com/fuji/fujisdk/core/helper/Storage.class
+* out/production/FujiSDK/com/fuji/fujisdk/core/http/
+* out/production/FujiSDK/com/fuji/fujisdk/core/http/HttpClientRequest$Type.class
+* out/production/FujiSDK/com/fuji/fujisdk/core/http/HttpClientRequest.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/Authenticator$1.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/Authenticator$LoginTask.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/Authenticator$SignupTask.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/Authenticator.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/FujiSDK.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/listener/
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/listener/BaseAuthenticationListener.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/listener/LoginListener.class
+* out/production/FujiSDK/com/fuji/fujisdk/oauth/listener/SignupListener.class
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => FujiSDK/src/main/AndroidManifest.xml
+* res/ => FujiSDK/src/main/res
+* src/ => FujiSDK/src/main/java/
+* src/.DS_Store => FujiSDK/src/main/resources/.DS_Store
+* src/com/.DS_Store => FujiSDK/src/main/resources/com/.DS_Store
+* src/com/fuji/.DS_Store => FujiSDK/src/main/resources/com/fuji/.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
