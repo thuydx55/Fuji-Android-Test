@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FujiSDK.Instance.pay(new MessageListener() {
+                FujiSDK.Instance.showPayment(new MessageListener() {
                     @Override
                     public void onSucceed() {
 
