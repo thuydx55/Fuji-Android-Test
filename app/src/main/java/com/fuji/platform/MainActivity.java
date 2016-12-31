@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getSimpleName();
 
-    private Button mBtnLogin, mBtnLogout, mBtnPayment;
+    private Button mBtnLogin, mBtnLogout, mBtnPayment, mBtnUserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBtnUserInfo = (Button) findViewById(R.id.btnUserInfo);
+        mBtnUserInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FujiSDK.Instance.showUserInfo();
+            }
+        });
+
         reloadButtonState();
     }
 
@@ -83,5 +91,6 @@ public class MainActivity extends AppCompatActivity {
         mBtnLogin.setEnabled(!FujiSDK.Instance.isLoggedIn());
         mBtnLogout.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnPayment.setEnabled(FujiSDK.Instance.isLoggedIn());
+        mBtnUserInfo.setEnabled(FujiSDK.Instance.isLoggedIn());
     }
 }
