@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FujiSDK.Instance.setDebugMode(true);
         FujiSDK.Instance.initialize(this.getApplication(), "TestSDKCode");
 
         mBtnLogin = (Button) findViewById(R.id.btnLogin);
