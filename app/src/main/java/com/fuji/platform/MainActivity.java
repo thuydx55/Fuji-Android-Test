@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FujiSDK.Instance.setDebugMode(true);
         FujiSDK.Instance.initialize(this.getApplication(), "TestSDKCode");
 
         mBtnLogin = (Button) findViewById(R.id.btnLogin);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FujiSDK.Instance.pay(new MessageListener() {
+                FujiSDK.Instance.showPayment(new MessageListener() {
                     @Override
                     public void onSucceed() {
 
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         reloadButtonState();
+
+        Log.d(TAG, stringFromJNI());
     }
 
     private void reloadButtonState() {
@@ -92,5 +95,16 @@ public class MainActivity extends AppCompatActivity {
         mBtnLogout.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnPayment.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnUserInfo.setEnabled(FujiSDK.Instance.isLoggedIn());
+    }
+
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    public native String stringFromJNI();
+
+    // Used to load the 'native-lib' library on application startup.
+    static {
+        System.loadLibrary("native-lib");
     }
 }
