@@ -1,14 +1,17 @@
 package com.fuji.platform;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.fuji.fujisdk.FujiSDK;
+import com.fuji.fujisdk.Utils;
 import com.fuji.fujisdk.core.listener.MessageListener;
 import com.fuji.fujisdk.oauth.listener.LoginListener;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         reloadButtonState();
+
+//        Log.d(TAG, Utils.calculateHashParam(new HashMap<String, String>(){{ put("bce", "3"); put("def", "1"); put("abc", "2"); }}));
     }
 
     private void reloadButtonState() {
