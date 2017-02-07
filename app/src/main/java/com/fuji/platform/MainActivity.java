@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         reloadButtonState();
+
+//        Log.d(TAG, Utils.calculateHashParam(new HashMap<String, String>(){{ put("bce", "3"); put("def", "1"); put("abc", "2"); }}));
     }
 
     private void reloadButtonState() {
