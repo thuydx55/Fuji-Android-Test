@@ -1,4 +1,1 @@
-include ':app'
-
-include ':FujiSDK'
-project(':FujiSDK').projectDir = new File(settingsDir, '../Android')
+include ':app', ':FujiSDK'
