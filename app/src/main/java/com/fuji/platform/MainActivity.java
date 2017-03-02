@@ -7,17 +7,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.fuji.fujisdk.FujiSDK;
-import com.fuji.fujisdk.Utils;
 import com.fuji.fujisdk.core.listener.MessageListener;
 import com.fuji.fujisdk.oauth.listener.LoginListener;
-
-import java.util.HashMap;
+import com.fuji.fujisdk.payment.listener.PaymentListener;
 
 public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getSimpleName();
 
-    private Button mBtnLogin, mBtnLogout, mBtnPayment, mBtnUserInfo;
+    private Button mBtnLogin, mBtnLogout, mBtnPayment, mBtnUserInfo, mBtnTransfer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FujiSDK.Instance.setDebugMode(true);
-        FujiSDK.Instance.initialize(this.getApplication(), "TestSDKCode");
+        FujiSDK.Instance.initialize(this.getApplication(), "RMReMonster");
 
         mBtnLogin = (Button) findViewById(R.id.btnLogin);
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +86,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBtnTransfer = (Button) findViewById(R.id.btnTransfer);
+        mBtnTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FujiSDK.Instance.transferCoin("jp.co.alphapolis.games.remon.5", new PaymentListener() {
+                    @Override
+                    public void onSucceed(int coin) {
+                        Log.d(TAG, "Succeed");
+                    }
+
+                    @Override
+                    public void onFailed(String message) {
+                        Log.d(TAG, "Failed " + message);
+                    }
+                });
+            }
+        });
+
         reloadButtonState();
     }
 
@@ -96,5 +112,6 @@ public class MainActivity extends AppCompatActivity {
         mBtnLogout.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnPayment.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnUserInfo.setEnabled(FujiSDK.Instance.isLoggedIn());
+        mBtnTransfer.setEnabled(FujiSDK.Instance.isLoggedIn());
     }
 }
