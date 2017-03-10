@@ -19,28 +19,23 @@
         android:layout_marginTop="20dp"
         android:id="@+id/btnLogin" />
     <Button
-            android:text="Logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/btnLogout" android:layout_below="@+id/btnLogin" android:layout_alignLeft="@+id/btnLogin"
-            android:layout_alignStart="@+id/btnLogin"/>
-    <Button
-            android:text="Payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/btnPayment"
-            android:layout_below="@+id/btnLogout" android:layout_alignLeft="@+id/btnLogout"
-            android:layout_alignStart="@+id/btnLogout"/>
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnLogout"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignLeft="@+id/btnLogin"
+        android:layout_alignStart="@+id/btnLogin"/>
     <Button
         android:text="UserInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/btnUserInfo"
-        android:layout_below="@+id/btnPayment" android:layout_alignLeft="@+id/btnPayment"
-        android:layout_alignStart="@+id/btnPayment"/>
+        android:layout_below="@+id/btnLogout"
+        android:layout_alignLeft="@+id/btnLogout"
+        android:layout_alignStart="@+id/btnLogout"/>
 
     <Button
         android:text="Transfer"
@@ -48,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/btnTransfer"
-        android:layout_below="@+id/btnUserInfo" android:layout_alignLeft="@+id/btnUserInfo"
+        android:layout_below="@+id/btnUserInfo"
+        android:layout_alignLeft="@+id/btnUserInfo"
         android:layout_alignStart="@+id/btnUserInfo"/>
 </RelativeLayout>

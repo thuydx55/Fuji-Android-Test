@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getSimpleName();
 
-    private Button mBtnLogin, mBtnLogout, mBtnPayment, mBtnUserInfo, mBtnTransfer;
+    private Button mBtnLogin, mBtnLogout, mBtnUserInfo, mBtnTransfer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,24 +60,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBtnPayment = (Button) findViewById(R.id.btnPayment);
-        mBtnPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FujiSDK.Instance.showPayment(new MessageListener() {
-                    @Override
-                    public void onSucceed() {
-
-                    }
-
-                    @Override
-                    public void onFailed(String msg) {
-
-                    }
-                });
-            }
-        });
-
         mBtnUserInfo = (Button) findViewById(R.id.btnUserInfo);
         mBtnUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FujiSDK.Instance.transferCoin("jp.co.alphapolis.games.remon.5", new PaymentListener() {
+                FujiSDK.Instance.transferCoin("jp.co.alphapolis.games.remon.125", new PaymentListener() {
                     @Override
                     public void onSucceed(int coin) {
                         Log.d(TAG, "Succeed");
@@ -110,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
     private void reloadButtonState() {
         mBtnLogin.setEnabled(!FujiSDK.Instance.isLoggedIn());
         mBtnLogout.setEnabled(FujiSDK.Instance.isLoggedIn());
-        mBtnPayment.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnUserInfo.setEnabled(FujiSDK.Instance.isLoggedIn());
         mBtnTransfer.setEnabled(FujiSDK.Instance.isLoggedIn());
     }
