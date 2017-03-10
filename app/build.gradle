@@ -37,7 +37,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.2.0'
-
-    debugCompile project(path: ':FujiSDK', configuration: "debug")
-    releaseCompile project(path: ':FujiSDK', configuration: "release")
+    compile project(path: ':FujiSDK')
 }
