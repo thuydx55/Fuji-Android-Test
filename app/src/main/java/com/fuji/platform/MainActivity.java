@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.fuji.fujisdk.FujiSDK;
-import com.fuji.fujisdk.core.listener.MessageListener;
 import com.fuji.fujisdk.oauth.listener.LoginListener;
-import com.fuji.fujisdk.payment.listener.PaymentListener;
+import com.fuji.fujisdk.payment.Transaction;
+import com.fuji.fujisdk.payment.listener.TransactionListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,15 +72,20 @@ public class MainActivity extends AppCompatActivity {
         mBtnTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FujiSDK.Instance.transferCoin("jp.co.alphapolis.games.remon.125", new PaymentListener() {
+                FujiSDK.Instance.transferCoin("jp.co.alphapolis.games.remon.5", new TransactionListener() {
                     @Override
-                    public void onSucceed(int coin) {
-                        Log.d(TAG, "Succeed");
+                    public void onSucceed(Transaction transaction) {
+                        Log.d(TAG, "Succeed: " + transaction.packageCode + " - " + transaction.fCoin);
                     }
 
                     @Override
                     public void onFailed(String message) {
                         Log.d(TAG, "Failed " + message);
+                    }
+
+                    @Override
+                    public void onCancelled() {
+                        Log.d(TAG, "Cancelled");
                     }
                 });
             }

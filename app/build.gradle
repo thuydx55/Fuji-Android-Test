@@ -23,9 +23,6 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-//            if (project.hasProperty("RELEASE_STORE_FILE")) {
-//                signingConfig signingConfigs.release
-//            }
         }
         release {
             minifyEnabled false
